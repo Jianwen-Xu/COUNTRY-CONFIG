@@ -21,7 +21,7 @@ spring:
     gateway:
       routes:
         - id: country-rest-api
-          uri: http://COUNTRY-REST-API/countries
+          uri: http://country-rest-api/countries
           predicates:
             - Path=/api/country/**
           filters:

@@ -26,6 +26,12 @@ spring:
             - Path=/api/country/**
           filters:
             - StripPrefix=2
+
+zuul:
+  prefix: /api
+  ignoredServices: '*'
+  routes:
+    country-rest-api: /country/**
 ---
 
 eureka:

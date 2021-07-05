@@ -1,3 +1,9 @@
+zuul:
+  prefix: /api
+  ignoredServices: '*'
+  routes:
+    country-rest-api: /country/**
+
 server:
   port: 8080
   compression:

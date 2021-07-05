@@ -12,6 +12,20 @@ eureka:
   instance:
     # enable to register multiple app instances with a random server port
     instance-id: ${spring.application.name}:${random.uuid}
+    
+spring:
+  cloud:
+    loadbalancer:
+      ribbon:
+        enabled: false
+    gateway:
+      routes:
+        - id: country-rest-api
+          uri: http://localhost:8081/countries
+          predicates:
+            - Path=/api/country/**
+          filters:
+            - StripPrefix=2
 ---
 
 eureka:
